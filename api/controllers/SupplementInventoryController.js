@@ -4,18 +4,14 @@
  * @description :: Server-side logic for managing Supplementinventories
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
-
+var path = require('path');
 module.exports = {
-	
-
 
   /**
    * `SupplementInventoryController.create()`
    */
   create: function (req, res) {
-    return res.json({
-      todo: 'create() is not implemented yet!'
-    });
+    CSVService.get_supplements(req, res);
   },
 
 
@@ -23,9 +19,22 @@ module.exports = {
    * `SupplementInventoryController.load()`
    */
   load: function (req, res) {
-    return res.json({
-      todo: 'load() is not implemented yet!'
-    });
+    CSVService.load(req, res);
   }
 };
-
+/*
+module.exports = {
+  create: function (req, res) {
+    res.send({
+      foo: req.body.foo
+    });
+  },
+  load: function (req, res) {
+    res.send({
+      "data": {
+        "stuff": "mine"
+      }
+    });
+  }
+}
+*/
